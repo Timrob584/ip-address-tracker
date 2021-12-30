@@ -1,0 +1,29 @@
+.jumbotron {
+  background-image: url("../images/pattern-bg.png");
+  background-size: 100%;
+}
+
+#header-title {
+  text-align: center;
+  color: white;
+  font-weight: 500;
+}
+
+.mb-3 {
+  display: flex;
+  justify-content: center;
+  margin-top: 40px;
+  height: 40px;
+}
+
+#ipInput {
+  text-align: center;
+}
+
+#submitBtn {
+  width: 40px;
+  height: 40px;
+  border-top-right-radius: 8px;
+  border-bottom-right-radius: 8px;
+  background-color: black;
+}
