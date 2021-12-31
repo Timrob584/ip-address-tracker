@@ -1,6 +1,5 @@
 const searchInput = document.getElementById("ipInput");
 const submitBtn = document.getElementById("submitBtn");
-const ipSearch = searchInput.value.trim();
 
 // To Run Geolocation API
 function getLocation(ipAddress) {
@@ -10,7 +9,6 @@ function getLocation(ipAddress) {
         })
         .then(function (data) {
             console.log(data);
-
 
             // To Display Data From API
             let address = document.createElement("p");
@@ -60,8 +58,6 @@ function getLocation(ipAddress) {
             }).addTo(map);
         })
 }
-
-
 
 // Runs Geolocation API When IP Address Is Searched
 function formSubmit(event) {
