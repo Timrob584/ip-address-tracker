@@ -11,10 +11,16 @@
       sizes="32x32"
       href="./images/favicon-32x32.png"
     />
-    <link href="design/style.css" rel="stylesheet" />
+    <link rel="stylesheet" href="design/style.css" />
     <link
       rel="stylesheet"
       href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+    />
+    <link
+      rel="stylesheet"
+      href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css"
+      integrity="sha512-xodZBNTC5n17Xt2atTPuE1HxjVMSvLVW9ocqUKLsCC5CXdbqCmblAshOMAS6/keqq/sMZMZ19scR4PsZChSR7A=="
+      crossorigin=""
     />
 
     <title>IP Address Tracker</title>
@@ -24,7 +30,12 @@
       <div class="jumbotron">
         <h2 id="header-title">IP Address Tracker</h2>
         <div class="mb-3">
-          <input type="text" class="form-control w-25 p-3" id="ipInput" placeholder="Search for any IP address or domain">
+          <input
+            type="text"
+            class="form-control w-25 p-3"
+            id="ipInput"
+            placeholder="Search for any IP address or domain"
+          />
           <button id="submitBtn" type="submit" form="ipInput" value="submit">
             <svg xmlns="http://www.w3.org/2000/svg" width="11" height="14">
               <path
@@ -36,22 +47,48 @@
             </svg>
           </button>
         </div>
-        </form>
-        <!-- <div id="ipSearchbar">SEARCHBAR</div> -->
       </div>
     </header>
-    IP
-    Address
-    Location
-    Timezone UTC"
-    <!-- add offset value dynamically using the API -->
-    ISP
+    <div class="row" id="info-container">
+      <div class="column info-border">
+        <p class="info-header">IP ADDRESS</p>
+        <span class="info-text" id="address"></span>
+      </div>
 
-    <div class="attribution">
-      Challenge by
-      <a href="https://www.frontendmentor.io?ref=challenge" target="_blank"
-        >Frontend Mentor</a
-      >. Coded by <a href="#">Timothy Robinson</a>
+      <div class="column info-border">
+        <p class="info-header">LOCATION</p>
+        <span class="info-text" id="location"></span>
+      </div>
+
+      <div class="column info-border">
+        <p class="info-header">TIMEZONE</p>
+        <span class="info-text" id="timezone"></span>
+      </div>
+
+      <div class="column">
+        <p class="info-header">ISP</p>
+        <span class="info-text" id="isp"></span>
+      </div>
     </div>
+    <div id="map"></div>
+    <!-- add offset value dynamically using the API -->
+    <footer class="attribution">
+      <div>
+        Challenge by
+        <a
+          href="https://www.frontendmentor.io/challenges/ip-address-tracker-I8-0yYAH0"
+          class="link-text"
+          target="_blank"
+          >Frontend Mentor</a
+        >
+        & Coded by <span class="link-text">Timothy Robinson</span>
+      </div>
+    </footer>
+    <script src="design/script.js"></script>
+    <script
+      src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"
+      integrity="sha512-XQoYMqMTK8LvdxXYG3nZ448hOEQiglfqkJs1NOQV44cWnUrBc8PkAOcXy20w0vlaXaVUearIOBhiXZ5V3ynxwA=="
+      crossorigin=""
+    ></script>
   </body>
 </html>

@@ -1,12 +1,38 @@
+/* To add Mobile Responsiveness */
+.row {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.column {
+  flex: 25%;
+  padding: 20px;
+}
+
+@media (max-width: 992px) {
+  .column {
+    flex: 50%;
+  }
+}
+
+@media (max-width: 576px) {
+  .row {
+    flex-direction: column;
+  }
+}
+
+/* Header Styling */
 .jumbotron {
   background-image: url("../images/pattern-bg.png");
   background-size: 100%;
+  height: 335px;
 }
 
 #header-title {
   text-align: center;
   color: white;
   font-weight: 500;
+  margin-top: 0px;
 }
 
 .mb-3 {
@@ -26,4 +52,59 @@
   border-top-right-radius: 8px;
   border-bottom-right-radius: 8px;
   background-color: black;
+}
+
+/* Info Container Styling */
+#info-container {
+  justify-content: space-around;
+  border: solid black 0.1px;
+  border-radius: 5px;
+  padding-top: 25px;
+  background-color: white;
+  width: 80vw;
+  margin: 0 auto;
+  margin-top: -110px;
+}
+
+.info-header {
+  color: hsl(0, 0%, 59%);
+  font-size: 12px;
+  font-weight: 700;
+  text-align: center;
+}
+
+.info-text {
+  font-size: 18px;
+  font-weight: bold;
+}
+
+#address,
+#timezone {
+  margin-left: 75px;
+}
+
+#isp {
+  margin-left: 100px;
+}
+
+.info-border {
+  border-right: solid hsl(0, 0%, 59%) 0.1px;
+  margin-bottom: 15px;
+}
+
+/* Footer Styling */
+.attribution {
+  text-align: center;
+  background-image: url("../images/pattern-bg.png");
+  background-size: 100%;
+  color: white;
+}
+
+.link-text {
+  color: black;
+}
+
+#map {
+  height: 50vh;
+  width: 100%;
 }
