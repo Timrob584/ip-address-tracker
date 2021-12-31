@@ -4,7 +4,7 @@ const ipSearch = searchInput.value.trim();
 
 // To Run Geolocation API
 function getLocation(ipAddress) {
-    fetch("https://geo.ipify.org/api/v2/country,city?apiKey=at_P8CHOZPKw7tvKCLazS8yosCI3wTKm&ipAddress=" + ipSearch)
+    fetch("https://geo.ipify.org/api/v2/country,city?apiKey=at_P8CHOZPKw7tvKCLazS8yosCI3wTKm&ipAddress= ")
         .then(function (response) {
             return response.json();
         })
@@ -36,23 +36,32 @@ function getLocation(ipAddress) {
             let ispEl = document.getElementById("isp");
 
             ispEl.textContent = isp;
+
+            // To Run Map API
+            const lat = data.location.lat;
+            const lon = data.location.lng;
+
+            const map = L.map('map').setView([lat, lon], 13);
+
+            L.tileLayer('https://api.mapbox.com/styles/v1/{id}/tiles/{z}/{x}/{y}?access_token={accessToken}', {
+                attribution: 'Map data &copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors, Imagery © <a href="https://www.mapbox.com/">Mapbox</a>',
+                maxZoom: 18,
+                id: "mapbox/streets-v11",
+                tileSize: 512,
+                zoomOffset: -1,
+                accessToken: "pk.eyJ1IjoidGltaXRoaWN1czciLCJhIjoiY2t4dHNlN2lpNW40MzJ6a3lheDQ0dXR3dCJ9.s8DTPsObIr8F8Tjy-iS3mA"
+            }).addTo(map);
+
+            const circle = L.circle([lat, lon], {
+                color: "blue",
+                fillColor: "#f03",
+                fillOpacity: .1,
+                radius: 250
+            }).addTo(map);
         })
 }
 
-// To Run Map API
-// const lat = location.lat;
-// const lon = location.lng;
 
-// const map = L.map("map").setView([lat, lon], 13);
-
-// L.tileLayer('https://api.mapbox.com/styles/v1/{id}/tiles/{z}/{x}/{y}?access_token={pk.eyJ1IjoidGltaXRoaWN1czciLCJhIjoiY2t4dHNmZmk0MGg2YjJ2cG9nZW15bmk0MSJ9.qs9VzBdMftHSSLu8IAwJMA}', {
-//     attribution: 'Map data &copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors, Imagery © <a href="https://www.mapbox.com/">Mapbox</a>',
-//     maxZoom: 18,
-//     id: "mapbox/streets-v11",
-//     tileSize: 512,
-//     zoomOffset: -1,
-//     accessToken: "pk.eyJ1IjoidGltaXRoaWN1czciLCJhIjoiY2t4dHNmZmk0MGg2YjJ2cG9nZW15bmk0MSJ9.qs9VzBdMftHSSLu8IAwJMA"
-// }).addTo(map);
 
 // Runs Geolocation API When IP Address Is Searched
 function formSubmit(event) {

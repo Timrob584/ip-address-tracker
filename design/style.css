@@ -62,8 +62,10 @@
   padding-top: 25px;
   background-color: white;
   width: 80vw;
-  margin: 0 auto;
   margin-top: -110px;
+  position: absolute;
+  left: 10vw;
+  z-index: 1000;
 }
 
 .info-header {
@@ -80,11 +82,18 @@
 
 #address,
 #timezone {
-  margin-left: 75px;
+  margin: 0 auto;
+  margin-left: 120px;
 }
 
 #isp {
-  margin-left: 100px;
+  margin: 0 auto;
+  margin-left: 175px;
+}
+
+#location {
+  margin: 0 auto;
+  margin-left: 50px;
 }
 
 .info-border {
@@ -98,6 +107,10 @@
   background-image: url("../images/pattern-bg.png");
   background-size: 100%;
   color: white;
+  position: fixed;
+  bottom: 0;
+  z-index: 1000;
+  width: 100%;
 }
 
 .link-text {
@@ -105,6 +118,7 @@
 }
 
 #map {
-  height: 50vh;
+  margin-top: -70px;
+  height: 80vh;
   width: 100%;
 }
