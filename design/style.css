@@ -78,23 +78,24 @@
 .info-text {
   font-size: 18px;
   font-weight: bold;
+  text-align: center;
 }
 
-#address,
+/* #address,
 #timezone {
   margin: 0 auto;
   margin-left: 120px;
-}
-
+} */
+/* 
 #isp {
   margin: 0 auto;
   margin-left: 155px;
-}
+} */
 
-#location {
+/* #location {
   margin: 0 auto;
   margin-left: 50px;
-}
+} */
 
 .info-border {
   border-right: solid hsl(0, 0%, 59%) 0.1px;
